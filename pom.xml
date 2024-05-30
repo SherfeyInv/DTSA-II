@@ -20,8 +20,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.6.1</version>
 				<configuration>
-					<source />
-					<target />
+					<source/>
+					<target/>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -87,7 +87,7 @@
 		<dependency>
 			<groupId>com.formdev</groupId>
 			<artifactId>flatlaf</artifactId>
-			<version>3.0</version>
+			<version>3.4.1</version>
 		</dependency>
 	</dependencies>
 </project>
