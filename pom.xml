@@ -20,8 +20,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.6.1</version>
 				<configuration>
-					<source />
-					<target />
+					<source/>
+					<target/>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -72,7 +72,7 @@
 		<dependency>
 			<groupId>com.thoughtworks.xstream</groupId>
 			<artifactId>xstream</artifactId>
-			<version>1.4.19</version>
+			<version>1.4.20</version>
 		</dependency>
 		<dependency>
 			<groupId>gov.nist.math</groupId>
