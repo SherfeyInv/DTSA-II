@@ -3,7 +3,7 @@
   <dontWrapJar>true</dontWrapJar>
   <headerType>gui</headerType>
   <jar>dtsa2.jar</jar>
-  <outfile>C:\Users\nritchie\repositories\DTSA-II\Installer\DTSA-II Build\DTSA-II.exe</outfile>
+  <outfile>C:\Users\nritchie\repositories\DTSA-II\Installer\DTSA-II Build\DTSA-II_G1.exe</outfile>
   <errTitle>NIST DTSA-II</errTitle>
   <cmdLine></cmdLine>
   <chdir></chdir>
@@ -22,7 +22,7 @@
     <maxVersion></maxVersion>
     <initialHeapPercent>10</initialHeapPercent>
     <maxHeapPercent>70</maxHeapPercent>
-	<opt>-XX:+UseZGC -XX:+ZGenerational</opt>
+	<opt>-XX:+UseG1GC</opt>
   </jre>
   <versionInfo>
     <fileVersion>NUMBER_VERSION</fileVersion>

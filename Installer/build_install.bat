@@ -1,20 +1,20 @@
-set "D2V=2023-12-18"
-set "NUM_VER=14.2.9.0"
+set "D2V=2024-06-11"
+set "NUM_VER=15.1.1.0"
 set "JDK_VER=21"
 set "BPATH=C:\Users\nritchie\repositories"
-set "NAME_VER=neptune"
+set "NAME_VER=Oberon"
 cd %BPATH%
 
 del dtsa2_%NAME_VER%.jar
 del dtsa2_%NAME_VER%_nojre.jar
-del dtsa2_%NAME_VER%_full.jar 
+del dtsa2_%NAME_VER%_full.jar
 
-echo Neptune %D2V% > "DTSA-II\src\gov\nist\microanalysis\dtsa2\revision"
-echo Neptune %D2V% > "DTSA-II\target\classes\gov\nist\microanalysis\dtsa2\revision"
-echo Neptune %D2V% > "epq\target\classes\gov\nist\microanalysis\EPQLibrary\revision"
-echo Neptune %D2V% > "epq\src\gov\nist\microanalysis\EPQLibrary\revision"
-echo Neptune %D2V% > "graf\src\gov\nist\microanalysis\Graf\revision"
-echo Neptune %D2V% > "graf\target\classes\gov\nist\microanalysis\Graf\revision"
+echo %NAME_VER% %D2V% > "DTSA-II\src\gov\nist\microanalysis\dtsa2\revision"
+echo %NAME_VER% %D2V% > "DTSA-II\target\classes\gov\nist\microanalysis\dtsa2\revision"
+echo %NAME_VER% %D2V% > "epq\target\classes\gov\nist\microanalysis\EPQLibrary\revision"
+echo %NAME_VER% %D2V% > "epq\src\gov\nist\microanalysis\EPQLibrary\revision"
+echo %NAME_VER% %D2V% > "graf\src\gov\nist\microanalysis\Graf\revision"
+echo %NAME_VER% %D2V% > "graf\target\classes\gov\nist\microanalysis\Graf\revision"
 
 cd %BPATH%\DTSA-II
 jar cfm "%BPATH%\DTSA-II\Installer\DTSA-II Build\dtsa2.jar" MANIFEST.MF LicenseFile.txt -C "target\classes" . 
@@ -36,6 +36,10 @@ call "%BPATH%\DTSA-II\Installer\DTSA-II Build\buildjre.bat"
 "C:\Program Files (x86)\GnuWin32\bin\sed.exe" -e "s/NUMBER_VERSION/%NUM_VER%/" -e "s/DATE_VERSION/%D2V%/" -e "s/JDK_VERSION/%JDK_VER%/" "%BPATH%\DTSA-II\Installer\Launch4j_config.template" > "%BPATH%\DTSA-II\Installer\Launch4j_config.xml"
 call "C:\Program Files (x86)\Launch4j\launch4jc.exe" "%BPATH%\DTSA-II\Installer\Launch4j_config.xml"
 del "%BPATH%\DTSA-II\Installer\Launch4j_config.xml"
+
+"C:\Program Files (x86)\GnuWin32\bin\sed.exe" -e "s/NUMBER_VERSION/%NUM_VER%/" -e "s/DATE_VERSION/%D2V%/" -e "s/JDK_VERSION/%JDK_VER%/" "%BPATH%\DTSA-II\Installer\Launch4j_config_g1.template" > "%BPATH%\DTSA-II\Installer\Launch4j_config_g1.xml"
+call "C:\Program Files (x86)\Launch4j\launch4jc.exe" "%BPATH%\DTSA-II\Installer\Launch4j_config_g1.xml"
+del "%BPATH%\DTSA-II\Installer\Launch4j_config_g1.xml"
 
 "C:\Program Files (x86)\GnuWin32\bin\sed.exe" -e "s/NUMBER_VERSION/%NUM_VER%/" -e "s/DATE_VERSION/%D2V%/" -e "s/JDK_VERSION/%JDK_VER%/" "%BPATH%\DTSA-II\Installer\Launch4j_relocate.template" > "%BPATH%\DTSA-II\Installer\Launch4j_relocate.xml"
 call "C:\Program Files (x86)\Launch4j\launch4jc.exe" "%BPATH%\DTSA-II\Installer\Launch4j_relocate.xml"
@@ -65,6 +69,7 @@ del "%BPATH%\DTSA-II\Installer\izPack_install_nojre.xml"
 copy dtsa2_%NAME_VER%.jar "V:\internal\643_violet\DTSA-II Latest"
 copy dtsa2_%NAME_VER%_nojre.jar "V:\internal\643_violet\DTSA-II Latest"
 copy dtsa2_%NAME_VER%_full.jar "V:\internal\643_violet\DTSA-II Latest"
+copy dtsa2_%NAME_VER%_full.jar "V:\internal\643_violet\DTSA-II Latest\dtsa2_%NAME_VER%_full_%NUM_VER%.jar"
 copy dtsa2_%NAME_VER%.jar "V:\internal\643_violet\DTSA-II Latest\dtsa2_prerelease.jar"
 copy dtsa2_%NAME_VER%_nojre.jar "V:\internal\643_violet\DTSA-II Latest\dtsa2_prerelease_nojre.jar"
 
